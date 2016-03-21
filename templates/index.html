@@ -1,0 +1,151 @@
+<!--
+|
+|   EMSAT HTML
+|
+-->
+<!DOCTYPE HTML>
+<html lang="zh-ch">
+<head>
+    <title>EMSAT</title>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="telephone=no" name="format-detection">
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="{{ url_for('static', filename='./css/lbenzene.css') }}"> -->
+    <link rel="stylesheet" type="text/css" media="screen" href="{{ url_for('static', filename='./css/c_blue.css') }}"> <!-- 配色方案选择 -->
+    <link rel="stylesheet" type="text/css" media="screen" href="{{ url_for('static', filename='./css/login.css') }}">
+
+</head>
+
+<body>
+<!--[if lt IE 10]>
+
+<div id="old-ie-hint">
+    <div>
+        <p class="lt-ie10">很抱歉，您当前的浏览器版本过低，网站可能无法正常显示，将为您的使用带来不便。请更换或升级为IE10以上、Chrome、Firefox、Safari进行浏览。</p>
+        <p>请点击<a href='#'>下载谷歌浏览器</a>，下载后点击“运行”自动安装。</p>
+        <p>如您的浏览器版本已经是IE10及以上，请关闭兼容模式视图：点击右上角“工具”->兼容性视图>在弹出窗口中取消勾选兼容性视图选项。</p>
+        <a href="#" class="a-close" onclick="javascript:$('div#old-ie-hint').hide(1000);">×</a>
+    </div>
+</div>
+<![endif]-->
+
+<div id="select-bar"></div>
+<div id="select-ball"></div>
+<div class="page-select">
+    <ul id="select">
+        <li>
+            <a data-page="1">
+               <span>HOME</span>
+            </a>
+        </li>
+        <li>
+            <a data-page="2">
+                <span>PD</span>
+            </a>
+        </li>
+        <li>
+            <a data-page="3">
+                <span>FUZZY</span>
+            </a>
+        </li>
+        <li>
+            <a data-page="4">
+                <span>ABOUT</span>
+            </a>
+        </li>
+    </ul>
+</div>
+
+<div class="background page1" id="background">
+    <div id="output"></div>
+</div>
+
+<div class="top-bar">
+    <ul id="top">
+        <li><a data-page="1">主界面</a></li>
+        <li><a data-page="2">PD设定</a></li>
+        <li><a data-page="3">FUZZY参数</a></li>
+        <li><a data-page="4">ABOUT</a></li>
+    </ul>
+</div>
+<!-- 
+<div class="top-header">
+    <ul>
+        <li><a>HELLO</a></li>
+        <li><a>233</a></li>
+        <li><a>2333333</a></li>
+        <li><a>233</a></li>
+    </ul>
+</div>
+ -->
+<div id="main-wrapper">
+    <div id="page1">
+        <div class="container">
+            <div class="blank-header"></div>
+            <!-- <div class="form-background-color"></div> -->
+            <div class="form">
+
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+
+    <div id="page2">
+        <div class="blank-header"></div>
+        <div class="form">
+            <h1>PD平衡参数表</h1>
+            <form>
+                <div>
+                    <label class="parameter" for="pangle">P_ANGLE:</label><input type="text" class="parameter" id="pangle">
+                </div>
+                <div>
+                    <label class="parameter" for="pangle">D_ANGLE:</label><input type="text" class="parameter" id="pangle">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="page3">
+        <div class="blank-header"></div>
+        <div class="action">
+            <h1>FUZZY模糊表</h1>
+            <div>
+                <div></div>
+            </div>
+        </div>
+        <div id="triangle-big-90-1"></div>
+
+    </div>
+
+    <div id="page4">
+        <div>
+            <h1>copyright RiBonE</h1>
+        </div>
+    </div>
+
+</div>
+
+    <!-- footer -->
+<!-- 
+<div class="footer">
+    <footer>
+        <hr />
+        <p>浙江大学企业俱乐部联合会百度俱乐部</p>
+        <p>Copyright © 2014 ZJU <a href="http://baiduzju.org">Baidu Club</a>. All Rights Reserved</p>
+    </footer>
+</div>
+ -->
+<!-- 提示消息 -->
+<div class="tips">
+    <img src="./img/tips.png" />
+</div>
+
+<script src="http://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://cdn.bootcss.com/jquery-scrollTo/1.4.11/jquery.scrollTo.min.js"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='./js/lbenzene.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='./js/sars.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='./js/canvas.js') }}"></script>
+
+</body>
+</html>

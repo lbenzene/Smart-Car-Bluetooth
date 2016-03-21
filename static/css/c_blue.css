@@ -1,0 +1,21 @@
+/**
+ * EMSAT
+ * theme for blue
+ * baidu club
+ */
+
+div.light {
+  background-color: #99CCFF;
+}
+
+div.normal {
+  background-color: #3399CC;
+}
+
+div.dark {
+  background-color: #003366;
+}
+
+div.blue {
+  background-color: #003399;
+}

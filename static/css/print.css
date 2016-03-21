@@ -1,0 +1,81 @@
+
+@media print {
+  * {
+    color: #000 !important;
+    text-shadow: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+  a {
+    text-decoration: none !important;
+  }
+  abbr[title]::after {
+    content: " (" attr(title) ")";
+  }
+  thead {
+    display: table-header-group;
+  }
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+  img {
+    max-width: 100% !important;
+  }
+  @page  {
+    margin: 2cm .5cm;
+  }
+  header {
+    display: none;
+  }
+  div.blank-header,
+  div.side-info,
+  div.hint,
+  div.control {
+    display: none !important;
+  }
+  table td,
+  table th {
+    background-color: #fff !important;
+    border: 1px solid #999 !important;
+    text-align: center;
+    vertical-align: middle;
+  }
+  table {
+    border-collapse: collapse !important;
+  }
+  table.class-table {
+    display: block;
+    width: 980px;
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  table.class-table td {
+    width: 63px;
+  }
+  table.class-table td.class-num {
+    width: 61px;
+  }
+  table.class-table > tbody > tr > td:first-child[rowspan] {
+    width: 20px;
+  }
+  table.class-table td > a,
+  div.class-info > a,
+  div.class-info > div {
+    display: none !important;
+  }
+  div.class-info > br {
+    display: none;
+    height: 0 !important; 
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  div.class-info > a:nth-of-type(1),
+  div.class-info > a:nth-last-of-type(1) {
+    display: block !important;
+    font-size: 14px !important;
+    line-height: 20px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+}

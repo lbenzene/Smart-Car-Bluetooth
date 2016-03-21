@@ -1,0 +1,1121 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: 'Segoe UI', Arial, 'Microsoft Yahei', Simsun, sans-serif;
+  width: 100%;
+  height: 100%;
+}
+
+*[draggable="true"] {
+  cursor: move !important;
+}
+
+::webkit-selection{ background-color: #3333c0; color: white; }
+   ::moz-selection{ background-color: #3333c0; color: white; }
+       ::selection{ background-color: #3333c0; color: white; }
+
+.grey {
+  background-color: #F1F1F1;
+}
+
+.grey.light {
+  background-color: #F5F5F5;
+}
+
+.white {
+  background-color: #FFFFFF;
+}
+
+a {
+  background-color: transparent;
+  text-decoration: none;
+  font-weight: normal;
+}
+
+a:hover,
+a:active,
+a:focus {
+  text-decoration: underline;
+}
+
+#old-ie-hint {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; 
+  z-index: 1000;
+  background-color: rgba(255,255,255, 0.5);
+}
+
+#old-ie-hint > div {
+  position: fixed;
+  bottom: 100px;
+  overflow: hidden;
+  width: 100%;
+  background-color: #CCCCCC;
+}
+
+#old-ie-hint > div > p {
+  font-family: inherit;
+  font-size: 25px;
+  margin-top: 25px;
+  padding: 0 80px;
+}
+
+#old-ie-hint > div > a.a-close {
+  position: absolute;
+  top: 15px;
+  right: 50px;
+  margin: 0;
+  padding-top: -15px;
+  text-align: center;
+  color: #CC6633;
+  font-size: 30px;
+  font-family: inherit;
+}
+
+#old-ie-hint > div > a.a-close:hover {
+  color: #333333;
+}
+
+.row {
+  display: block;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.container {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  clear: both;
+/*  
+  border-bottom: 2px solid #C0C0C0;
+  box-shadow: 0 1px 0 rgba(0,0,0, .2);
+*/
+}
+
+.bento {
+  background: #FFFFFF;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+  -webkit-box-shadow: inset -1px 0 0 0 #d2d2d2,inset -1px 0 0 0 #e6e6e6,inset 1px 0 0 0 #d2d2d2,1px 0 0 0 #e6e6e6,0 -1px 0 0 #e8e8e8,0 2px 0 0 rgba(241,241,241,0.3),0 1px 0 0 #b1b1b1;
+     -moz-box-shadow: inset -1px 0 0 0 #d2d2d2,inset -1px 0 0 0 #e6e6e6,inset 1px 0 0 0 #d2d2d2,1px 0 0 0 #e6e6e6,0 -1px 0 0 #e8e8e8,0 2px 0 0 rgba(241,241,241,0.3),0 1px 0 0 #b1b1b1;
+          box-shadow: inset -1px 0 0 0 #d2d2d2,inset -1px 0 0 0 #e6e6e6,inset 1px 0 0 0 #d2d2d2,1px 0 0 0 #e6e6e6,0 -1px 0 0 #e8e8e8,0 2px 0 0 rgba(241,241,241,0.3),0 1px 0 0 #b1b1b1;
+  position: relative;
+  width: 1000px;
+}
+
+.bento.attached {
+  margin-bottom: 0;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.bento.attached + .bento {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-top: 1px solid #DADADA;
+  -webkit-box-shadow: inset -1px 0 0 0 #d2d2d2,inset -1px 0 0 0 #e6e6e6,inset 1px 0 0 0 #d2d2d2,1px 0 0 0 #e6e6e6,0 2px 0 0 rgba(241,241,241,0.3),0 1px 0 0 #b1b1b1;
+     -moz-box-shadow: inset -1px 0 0 0 #d2d2d2,inset -1px 0 0 0 #e6e6e6,inset 1px 0 0 0 #d2d2d2,1px 0 0 0 #e6e6e6,0 2px 0 0 rgba(241,241,241,0.3),0 1px 0 0 #b1b1b1;
+          box-shadow: inset -1px 0 0 0 #d2d2d2,inset -1px 0 0 0 #e6e6e6,inset 1px 0 0 0 #d2d2d2,1px 0 0 0 #e6e6e6,0 2px 0 0 rgba(241,241,241,0.3),0 1px 0 0 #b1b1b1;
+}
+
+.bento > div.padding {
+  padding: 10px;
+}
+
+.square {
+  display: block;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+  width: 100%;
+  border: 1px solid #DDDDDD;
+  position: relative;
+  list-style-type: none;
+}
+
+.square.attached {
+  margin-bottom: 0;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom: none;
+}
+
+.square.attached + .square {
+  margin-top: 0;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.square > .col-3 {
+  display: inline-block;
+  float: left;
+  width: 244px;
+  min-height: 50px;
+  border-left: 1px solid #DDDDDD;
+}
+
+.square > .col-3:first-child {
+  border-left: none;
+  width: 245px;
+}
+
+div.blank-header {
+  height: 50px;
+  width: 100%;
+  display: block;
+  clear: both;
+}
+
+@media (max-width: 999px) {
+  .container,
+  .row {
+    width: 1000px;
+  }
+
+  body {
+    overflow: auto;
+  }
+}
+
+@media (min-width: 1000px) {
+  .row {
+    width: 100%;
+  }
+
+  .container {
+    width: 1000px;
+  }
+}
+
+h1 {
+  display: block;
+  color: #444;
+  background-color: transparent;
+  line-height: 60px;
+  font-size: 30px;
+  font-weight: normal;
+  text-align: center;
+  vertical-align: middle;
+}
+
+    /**
+     * main function part
+     */
+.clear {
+  clear: both; /* 放在浮动div中的最后，使之占据空间 */
+  height: 0;
+}
+
+div.index-main {
+  clear: both;
+  height: 300px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+div.index-main > div.divider {
+  float: left;
+
+  display: block;
+  width: 2px;
+  height: 300px;
+  margin: 0 -1px;
+  overflow: hidden;
+  background-color: #676767;
+}
+
+div.index-img {
+  float: left;
+  background-color: #6666CC;
+  width: 300px;
+  height: 300px;
+}
+
+div.index-img > img {
+  max-width: 300px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+
+div.index-img > .details {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background-color: rgba(0,0,0, .5);
+  opacity: 0;
+  -webkit-box-shadow: 0 0 6px rgba(0,0,0, .4) inset;
+     -moz-box-shadow: 0 0 6px rgba(0,0,0, .4) inset;
+          box-shadow: 0 0 6px rgba(0,0,0, .4) inset;
+  z-index: 5;
+}
+
+div.index-img > .details > a {
+  display: block;
+  margin-top: 240px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90px;
+  overflow: hidden;
+  opacity: 0;
+  padding: 5px 12px;
+  text-align: center;
+  vertical-align: middle;
+
+  background-color: transparent;
+  border-width: 1px;
+  border-style: solid;
+  -webkit-border-radius: 1px;
+     -moz-border-radius: 1px;
+          border-radius: 1px;
+  border-color: #FFFFFF;
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: normal;
+  text-decoration: none;
+  color: #FFFFFF;
+
+  -webkit-transition:background-color .25s ease-in-out, color .4s ease-in-out; /* Safari 和 Chrome */
+     -moz-transition:background-color .25s ease-in-out, color .4s ease-in-out; /* Firefox 4 */
+      -ms-transition:background-color .25s ease-in-out, color .4s ease-in-out; /* IE 9 */
+       -o-transition:background-color .25s ease-in-out, color .4s ease-in-out; /* Opera */
+          transition:background-color .25s ease-in-out, color .4s ease-in-out;
+}
+
+div.index-img > .details > a:hover {
+  background-color: #FFFFFF;
+  color: #141414;
+  text-decoration: none;
+}
+
+div.index-intro {
+  float: left;
+  padding: 10px;
+
+  vertical-align: middle;
+  background-color: #ffffff;
+  width: 680px;
+  height: 280px;
+}
+
+div.index-intro > h1,
+div.index-intro > h3,
+div.index-intro > p {
+  margin-top: 10px;
+  font-family: inherit;
+  color: #343434;
+  font-size: 1em;
+  font-weight: normal;
+  text-align: left;
+}
+
+div.index-intro > h1 {
+  font-size: 35px;
+}
+
+div.index-intro > h3 {
+  font-size: 25px;
+}
+
+div.index-intro > p {
+  font-size: 15px;
+}
+
+div.block {
+  clear: both;
+  width: 100%;
+  height: 100%;
+}
+
+div.block > ul > li {
+  float: left;
+  background-color: #1E90FF;
+  -webkit-border-radius: 3px;
+     -moz-border-radius: 3px;
+          border-radius: 3px;
+  display: block;
+  text-align: center;
+}
+
+@media (min-width: 1024px) {
+  div.block > ul > li {
+/*  width: 1000px;*/
+    width: 200px;
+    height: 200px;
+    margin: 25px;
+  }
+}
+
+div.block > ul > li > a {
+  display: block;
+  height: 100%;
+  width: 100%;
+  -webkit-border-radius: 3px;
+     -moz-border-radius: 3px;
+          border-radius: 3px;
+  background-color: transparent;
+  text-align: center;
+  vertical-align: middle;
+  font-family: inherit;
+  -webkit-transition: background-color .1s linear;
+     -moz-transition: background-color .1s linear;
+      -ms-transition: background-color .1s linear;
+       -o-transition: background-color .1s linear;
+          transition: background-color .1s linear;
+}
+
+div.block > ul > li > a:focus,
+div.block > ul > li > a:hover {
+  background-color: #ffffff;
+  text-decoration: none;
+  -webkit-transition: background-color .2s linear;
+     -moz-transition: background-color .2s linear;
+      -ms-transition: background-color .2s linear;
+       -o-transition: background-color .2s linear;
+          transition: background-color .2s linear;
+}
+
+  /**
+   * 课表左侧的拖动悬浮框
+   */
+div.class-selection {
+  display: block;
+  position: fixed;
+  left: 0;
+  top: 10%;
+  height: 80%;
+  min-height: 400px;
+  width: 50px;
+  background-color: #FFFFFF;
+  border: 4px solid #999999;
+  border-left: none;
+          border-top-right-radius: 10px;
+     -moz-border-top-right-radius: 10px;
+  -webkit-border-top-right-radius: 10px;
+          border-bottom-right-radius: 10px;
+     -moz-border-bottom-right-radius: 10px;
+  -webkit-border-bottom-right-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0, .25);
+  overflow-x: visible; 
+
+  z-index: 2000;
+}
+
+div.class-selection > ul {
+  position: relative;
+  display: block;
+  list-style-type: none;
+  height: 100%;
+  overflow: hidden;
+
+  z-index: 2000;
+}
+
+div.class-selection > ul > li {
+  position: relative;
+  display: block;
+  background-color: #999999;
+  color: #F1F1F1;
+  margin-top: 10px;
+  padding: 12px 0;
+  font-size: 12px;
+  font-family: inherit;
+  font-weight: lighter;
+}
+
+div.class-selection > a#selection-toggle {
+  position: absolute;
+  display: block;
+  top: 50%;
+  margin-top: -29px;
+  left: 40px;
+  width: 50px;
+  height: 50px;
+  color: #999999;
+  background-color: #FFFFFF;
+  border: 4px solid #999999;
+          border-radius: 29px;
+     -moz-border-radius: 29px;
+  -webkit-border-radius: 29px;
+  text-decoration: none;
+  overflow: hidden;
+
+  cursor: pointer;
+  z-index: 0;
+}
+
+div.class-selection > a#selection-toggle > span {
+  display: block;
+  height: 50px;
+  width: 50px;
+  font-size: 40px;
+  font-weight: bolder;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  font-family: 'Lato', Calibri, Arial, sans-serif;
+  line-height: 50px;
+  vertical-align: middle;
+  text-align: center;
+}
+
+div.class-selection > a#selection-toggle:hover {
+  background-color: #DDDDDD;
+}
+
+div.class-selection > a#selection-toggle:active {
+  background-color: #999999;
+  color: #FFFFFF;
+}
+
+div.season-left,
+div.season-right {
+  display: block;
+  float: left;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  height: 50px;
+  min-width: 100px;
+  margin-left: 50px;
+  margin-right: 50px;
+  line-height: 50px;
+  vertical-align: middle;
+  text-align: center;
+}
+
+div.season {
+  display: block;
+  float: left;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  height: 50px;
+  width: 300px;
+  background-color: #DDDDDD;
+}
+
+div.season-left > span,
+div.season-right > span {
+  display: block;
+  height: 40px;
+  width: 40px;
+  background-color: rgba(0,67,147, .2);
+  border-radius: 5px;
+  box-shadow: 3px 3px 0 rgba(0,0,0, .4);
+  font-size: 40px;
+  font-weight: bolder;
+  text-shadow: 2px 2px 0 rgba(0,0,0, .2);
+  color: #FFFFFF;
+  cursor: pointer;
+  font-family: 'Lato', Calibri, Arial, sans-serif;
+  line-height: 1em;
+  vertical-align: middle;
+  text-align: center;
+}
+
+div.season-left > span:hover,
+div.season-right > span:hover {
+  background-color: #EEEEEE;
+}
+
+  /**
+   * class table style
+   */
+div.class-table {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  clear: both;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+}
+
+div.class-table > div {
+  padding: 10px;
+  overflow-y: visible;
+}
+
+table.class-table {
+  display: block;
+  width: 980px;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+table.class-table thead {
+  background-color: #CCCCFF;
+}
+
+table.class-table th,
+table.class-table td {
+  border-style: solid;
+  border-color: #DBDBDB;
+  border-width: 1px;
+  text-align: center;
+  vertical-align: middle;
+
+  font-family: inherit;
+  font-size: 14px;
+  cursor: default;
+}
+
+table.class-table td {
+  position: relative;
+  padding: 5px 0;
+  width: 63px;
+}
+
+table.class-table td.class-num {
+  width: 61px;
+}
+
+table.class-table > tbody > tr > td:first-child[rowspan] {
+  width: 20px;
+}
+
+table.class-table td,
+.class-info > a {
+  cursor: pointer;
+}
+
+table.class-table tr:first-child > td {
+  cursor: default;
+}
+
+table.class-table td:hover {
+  background-color: #CCFFFF;
+}
+
+table.class-table td.chosen {
+  background-color: #CCCCFF;
+}
+
+table.class-table td.danger {
+  background-color: #FFCCCC;
+}
+
+table.class-table td.warning {
+  background-color: #EEDDCC;
+}
+
+table.class-table td.caution {
+  background-color: #DDEECC;
+}
+
+table.class-table td.safe {
+  background-color: #CCFFCC;
+}
+/*
+table.class-table td.chosen:hover,
+table.class-table td.danger:hover,
+table.class-table td.warning:hover,
+table.class-table td.caution:hover,
+table.class-table td.safe:hover {
+  opacity: .9;
+}
+*/
+table.class-table td > a {
+  position: relative;
+  display: block;
+  margin-left: 4px;
+  margin-right: 4px;
+  text-align: center;
+  vertical-align: middle;
+  color: #333333;
+  cursor: pointer;
+}
+
+table.class-table td:hover > a {
+  text-decoration: underline;
+  color: #141414;
+}
+
+.class-info {
+  display: none;
+  position: absolute;
+
+  background-color: rgba(0,0,0, .85);
+  border: none;
+  -webkit-border-radius: 3px;
+     -moz-border-radius: 3px;
+          border-radius: 3px;
+  pointer-events: none;
+  overflow: visible;
+  z-index: 5 !important;
+}
+
+.class-info {
+  margin-left: -18px;
+  margin-top: 5px;
+  padding: 10px;
+  width: 140px;
+}
+
+.class-info.half {
+  margin-left: -50px;
+}
+
+.class-info > a {
+  color: #DDDDDD;
+}
+
+.class-info > a:nth-child(2) {
+  color: #F1F1F1;
+  font-weight: bold;
+}
+
+table.class-table td:hover > div.class-info {
+  display: block;
+  pointer-events: all;
+}
+
+.class-info > a:hover {
+  color: #141414;
+  background-color: #DDDDDD;
+  border-style: none;
+  text-decoration: none;
+}
+
+.arrow-top,
+.arrow-bottom,
+.arrow-left,
+.arrow-right {
+  display: block;
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  background-color: transparent;
+
+  text-align: center;
+  z-index: 10;
+}
+
+.arrow-top {
+  border-left-color:transparent !important;
+  border-right-color:transparent !important; 
+  border-top-color:transparent !important;
+}
+
+.arrow-bottom {
+  border-bottom-color:transparent !important;
+  border-left-color:transparent !important; 
+  border-right-color:transparent !important;
+}
+
+.arrow-left {
+  border-top-color:transparent !important;
+  border-bottom-color:transparent !important; 
+  border-left-color:transparent !important;
+}
+
+.arrow-right {
+  border-top-color:transparent !important;
+  border-bottom-color:transparent !important; 
+  border-right-color:transparent !important;
+}
+
+div.class-arrow {
+  border-color: rgba(0,0,0, .85);
+  border-width: 5px;
+  margin-left: 66px;
+  margin-top: -20px;
+}
+
+  /**
+   * to-top
+   */
+div.control {
+  display: block;
+  position: fixed;
+  bottom: 100px;
+  background: transparent;
+  border: none;
+  z-index: 105;
+}
+
+@media (min-width: 1153px) {
+  div.control {
+    left: 50%;
+    margin-left: 508px;
+  }
+}
+
+@media (max-width: 1152px) {
+  div.control {
+    right: 10px;
+  }
+}
+
+.control > ul {
+  display: block;
+  list-style-type: none;
+}
+
+.control > ul > li {
+  display: block;
+  position: relative;
+  border: none;
+  height: 50px;
+  width: 50px;
+  background: transparent;
+  margin-top: 5px;
+  background-color: #27AE60;
+  text-align: center;
+  cursor: pointer;
+}
+
+.control > ul > li:first-child {
+  margin-top: 0;
+}
+
+.control > ul > li > span,
+.control > ul > li > span::before,
+.control > ul > li > span::after {
+  display: block;
+  position: absolute;
+  content: "";
+}
+
+.control > ul > li > a {
+  position: relative;
+  display: none;
+  font-size: 14px;
+  line-height: 18px;
+  padding-top: 8px;
+  height: 36px;
+  font-style: normal;
+  font-weight: lighter;
+  font-family: inherit;
+  color: #FFFFFF;
+  text-decoration: none;
+  cursor: pointer;
+
+  -webkit-transition: all .2s linear;
+     -moz-transition: all .2s linear;
+      -ms-transition: all .2s linear;
+       -o-transition: all .2s linear;
+          transition: all .2s linear;
+}
+
+.control > ul > li > a,
+.control > ul > li:hover > span,
+.control > ul > li:hover > span::before,
+.control > ul > li:hover > span::after {
+  display: none;
+}
+
+.control > ul > li:hover > a {
+  display: block;
+}
+
+.control li:hover {
+  background-color: #2ECC71;
+}
+
+.control li:active {
+  background-color: #179E50;
+}
+
+.control li.gotop > span {
+  top: 25px;
+  left: 17px;
+  width: 16px;
+  height: 16px;
+  background-color: #FFFFFF;
+}
+
+.control li.gotop > span::after {
+  top: -32px;
+  left: -8px;
+  height: 0;
+  width: 0;
+  border-top: 16px solid transparent;
+  border-left: 16px solid transparent;
+  border-bottom: 16px solid #FFFFFF;
+  border-right: 16px solid transparent;
+}
+
+.control li.comment > span {
+  top: 11px;
+  left: 9px;
+  height: 24px;
+  width: 32px;
+  background-color: #FFFFFF;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+}
+
+.control li.comment > span::before {
+  top: 7px;
+  left: 4px;
+  width: 24px;
+  height: 4px;
+  border-top: 3px solid #27AE60;
+  border-bottom: 3px solid #27AE60;
+}
+
+.control li.comment:hover > span::before {
+  border-color: #22DD55;
+}
+
+.control li.comment > span::after {
+  top: 24px;
+  left: 8px;
+  width: 0;
+  height: 0;
+  border-top: 4px solid #FFFFFF;
+  border-left: 4px solid #FFFFFF;
+  border-bottom: 4px solid transparent;
+  border-right: 4px solid transparent;
+}
+
+
+.control li.hint > span {
+  font-style: normal;
+  font-weight: bolder;
+  color: #FFFFFF;
+  font-size: 30px;
+  font-family: inherit;
+  line-height: 50px;
+  vertical-align: middle;
+  text-align: center;
+  content: "?";
+  position: relative;
+}
+
+.control li.hint > span::after {
+  height: 30px;
+  width: 30px;
+  top: 7px;
+  left: 7px;
+  background: transparent;
+  border-radius: 18px;
+  border: 3px solid #FFFFFF;
+}
+
+/*
+.control li.hint > a > span {
+  display: block;
+  position: absolute;
+  background-color: #FFFFFF;
+  border-radius: 30px;
+  width: 30px;
+  height: 30px;
+  left: 10px;
+  top: 10px;
+  font-style: italic;
+  font-weight: bolder;
+  color: #27AE60;
+  font-size: 20px;
+  line-height: 30px;
+  vertical-align: middle;
+  text-align: center;
+  content: "?";
+}
+*/
+
+
+.control li.hint > ul.circle {
+  display: block;
+  position: absolute;
+  height: 0;
+  width: 0;
+  top: 25px;
+  left: 25px;
+  overflow: hidden;
+  opacity: .9;
+  z-index: 110;
+
+  -webkit-transition: all .2s linear;
+     -moz-transition: all .2s linear;
+      -ms-transition: all .2s linear;
+       -o-transition: all .2s linear;
+          transition: all .2s linear;
+}
+
+.control li.hint:hover > ul.circle {
+  height: 100px;
+  width: 100px;
+  border-radius: 20px;
+  top: -25px;
+  left: -25px;
+}
+
+.control li.hint ul.circle > li {
+  display: block;
+  float: left;
+  height: 50px;
+  width: 50px;
+  line-height: 50px;
+  vertical-align: middle;
+  text-align: center;
+  cursor: pointer;
+}
+
+.control li.hint ul.circle > li:nth-child(1),
+.control li.hint ul.circle > li:nth-child(4) {
+  background-color: #EBEBEB;
+}
+
+.control li.hint ul.circle > li:nth-child(2),
+.control li.hint ul.circle > li:nth-child(3) {
+  background-color: #FFFFFF;
+}
+
+.control li.home > span {
+  top: 9px;
+  left: 13px;
+  width: 8px;
+  height: 16px;
+  background-color: #FFFFFF;
+}
+
+.control li.home > span::before {
+  top: 16px;
+  left: 0;
+  height: 8px;
+  width: 8px;
+  background: transparent;
+  border-top: 8px solid #FFFFFF;
+  border-left: 8px solid #FFFFFF;
+  border-right: 8px solid #FFFFFF;
+  border-bottom: none;
+}
+
+.control li.home > span::after {
+  top: -16px;
+  left: -4px;
+  height: 0;
+  width: 0;
+  background: transparent;
+  border-top: 16px solid transparent;
+  border-left: 16px solid transparent;
+  border-right: 16px solid transparent;
+  border-bottom: 16px solid #FFFFFF;
+}
+
+    /**
+     * footer part
+     */
+div.footer {
+  text-align: center;
+  padding-bottom: 40px;
+  border-top: 1px solid #C0C0C0;
+  padding-top: 0.5em;
+}
+
+div.footer > p {
+  line-height: 2em;
+  vertical-align: middle;
+  text-align: center;
+  font-size: 12px;
+  color: #666;
+}
+
+div.side-info {
+  position: fixed;
+  right: -80px;
+  overflow: hidden;
+  height: 40px;
+  width: 120px;
+  background-color: #FFF;
+  box-shadow: -1px 0 3px rgba(0,0,50, 0.2);
+  -webkit-transition: right .5s;
+     -moz-transition: right .5s;
+      -ms-transition: right .5s;
+       -o-transition: right .5s;
+          transition: right .5s;
+  cursor: pointer;
+  z-index: 5;
+}
+
+div.side-info.side-info-first {
+  top: 200px;
+}
+
+div.side-info.side-info-second {
+  top: 240px;
+}
+
+div.side-info:focus,
+div.side-info:hover {
+  right: 0;
+}
+
+div.side-info > div.side-info-left {
+  float: left;
+  width: 38px;
+  height: 38px;
+
+  background-color: transparent;
+  border-color: #CCCCFF;
+  border-width: 1px;
+  border-style: solid;
+  -webkit-transition: background-color .2s linear, border .2s linear;
+     -moz-transition: background-color .2s linear, border .2s linear;
+      -ms-transition: background-color .2s linear, border .2s linear;
+       -o-transition: background-color .2s linear, border .2s linear;
+          transition: background-color .2s linear, border .2s linear;
+}
+
+div.side-info:focus > div.side-info-left ,
+div.side-info:hover > div.side-info-left {
+  background-color: #3399CC;
+  border-color: #3399CC;
+  border-right-color: #888888;
+}
+
+
+div.side-info > div.side-info-right {
+  float: left;
+  width: 40px;
+  margin-left: 20px;
+
+  background-color: transparent;
+}
+
+  /**
+   * result
+   */
+table.result 
+
+  /**
+   * 彩蛋
+   */
+.lbenzene {
+  color: #58E68E;
+}
+
+.Arcane {
+  background-color: rgb(88, 230, 142);
+}

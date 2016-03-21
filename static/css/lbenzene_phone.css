@@ -1,0 +1,519 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: inherit;
+  vertical-align: baseline;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+  font-size: 62.5%;
+  -webkit-text-size-adjust:none;
+}
+
+body {
+  font-family: 'Segoe UI', Arial, 'Microsoft Yahei', Simsun, sans-serif;
+  width: 100%;
+  height: 100%;
+}
+
+::webkit-selection{ background-color: #3333c0; color: white; }
+   ::moz-selection{ background-color: #3333c0; color: white; }
+       ::selection{ background-color: #3333c0; color: white; }
+
+a {
+  background-color: transparent;
+  text-decoration: none;
+  font-weight: normal;
+}
+
+a:hover,
+a:active,
+a:focus {
+  text-decoration: underline;
+}
+
+.row {
+  display: block;
+  width: 100%;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+body > div:nth-of-type(2).row {
+  padding-top: 4rem;
+}
+
+.container {
+  display: block;
+  margin-right: 1rem;
+  margin-left: 1rem;
+  clear: both;
+/*  
+  border-bottom: 2px solid #C0C0C0;
+  box-shadow: 0 1px 0 rgba(0,0,0, .2);
+*/
+}
+
+.bento {
+  background: #FFFFFF;
+  -webkit-border-radius: .4rem;
+     -moz-border-radius: .4rem;
+          border-radius: .4rem;
+  border: .1rem solid #DADADA;
+  position: relative;
+}
+
+.bento.attached {
+  margin-bottom: 0;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom: none;
+}
+
+.bento.attached + .bento {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-top: .1rem solid #DADADA;
+}
+
+  /**
+   * main function part
+   */
+.clear {
+  clear: both; /* 放在浮动div中的最后，使之占据空间 */
+  height: 0;
+}
+
+  /**
+   * class table style
+   */
+div.grey {
+  background-color: #F1F1F1;
+}
+
+div.grey.light {
+  background-color: #F5F5F5;
+}
+
+div.white {
+  background-color: #FFFFFF;
+}
+
+.container h1 {
+  font-family: inherit;
+  font-size: 2rem;
+  font-weight: lighter;
+  color: #141414;
+  line-height: 2em;
+  text-align: center;
+  vertical-align: middle;
+}
+
+div.class-table {
+  display: block;
+  overflow-x: auto;
+  overflow-y: visible; 
+  clear: both;
+  -webkit-border-radius: .4rem;
+          border-radius: .4rem;
+}
+
+div.class-table > div {
+  padding: 1rem;
+  overflow-y: visible;
+}
+
+table.class-table {
+  display: block;
+  width: 98rem;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+table.class-table thead {
+  background-color: #CCCCFF;
+}
+
+table.class-table th,
+table.class-table td {
+  border-style: solid;
+  border-color: #DBDBDB;
+  border-width: .1rem;
+  text-align: center;
+  vertical-align: middle;
+
+  font-family: inherit;
+  font-size: 1.4rem;
+  cursor: default;
+}
+
+table.class-table td {
+  padding: .5rem 0;
+  width: 6.3rem;
+}
+
+table.class-table td.class-num {
+  width: 6.1rem;
+}
+
+table.class-table > tbody > tr > td:first-child[rowspan] {
+  width: 2rem;
+}
+
+table.class-table td,
+.class-info > a {
+  cursor: pointer;
+}
+
+table.class-table tr:first-child > td {
+  cursor: default;
+}
+
+table.class-table td:hover {
+  background-color: #CCFFFF;
+}
+
+table.class-table td.chosen {
+  background-color: #CCCCFF;
+}
+
+table.class-table td.danger {
+  background-color: #FFCCCC;
+}
+
+table.class-table td.warning {
+  background-color: #EEDDCC;
+}
+
+table.class-table td.caution {
+  background-color: #DDEECC;
+}
+
+table.class-table td.safe {
+  background-color: #CCFFCC;
+}
+/*
+table.class-table td.chosen:hover,
+table.class-table td.danger:hover,
+table.class-table td.warning:hover,
+table.class-table td.caution:hover,
+table.class-table td.safe:hover {
+  opacity: .9;
+}
+*/
+table.class-table td > a {
+  position: relative;
+  display: block;
+  margin-left: .4rem;
+  margin-right: .4rem;
+  text-align: center;
+  vertical-align: middle;
+  color: #333333;
+  cursor: pointer;
+}
+
+table.class-table td:hover > a {
+  text-decoration: underline;
+  color: #141414;
+}
+
+.class-info {
+  display: none;
+  position: absolute;
+  margin-left: -1.8rem;
+  margin-top: 1rem;
+  padding: 1rem;
+  width: 14rem;
+
+  background-color: rgba(0,0,0, .85);
+  border: none;
+  -webkit-border-radius: .3rem;
+     -moz-border-radius: .3rem;
+          border-radius: .3rem;
+  pointer-events: none;
+  overflow: visible;
+  z-index: 5 !important;
+}
+
+.class-info > a {
+  color: #DDDDDD;
+}
+
+.class-info > a:nth-child(2) {
+  color: #F1F1F1;
+  font-weight: bold;
+}
+
+table.class-table td:hover > div.class-info {
+  display: block;
+  pointer-events: all;
+}
+
+.class-info > a:hover {
+  color: #141414;
+  background-color: #DDDDDD;
+  border-style: none;
+  text-decoration: none;
+}
+
+  /**
+   * #### div.blue ####
+   */
+div.blue > div {
+  background-color: transparent;
+}
+
+div.blue h1,
+div.blue p,
+div.blue a,
+div.blue td,
+div.blue th {
+  color: #F1F1F1 !important;
+}
+
+div.blue th {
+  background-color: #0044DD;
+}
+
+div.blue td.choosing {
+  background-color: transparent !important;
+}
+
+div.blue td.choosing > a {
+  color: #FF9999 !important;
+}
+
+div.blue td.chosen {
+  background-color: transparent !important;
+}
+
+div.blue td.choosing:hover {
+  background-color: #FFCCCC !important;
+}
+div.blue td.chosen:hover {
+  background-color: #FFFFFF !important;
+}
+div.blue td:hover > a {
+  color: #141414 !important;
+}
+
+div.blue div.class-info {
+  background-color: #003399 !important;
+  border-color: #FFFFFF !important;
+}
+
+div.blue div.class-info > a:hover {
+  background-color: #F1F1F1 !important;
+  color: #003399 !important;
+}
+
+.arrow-top,
+.arrow-bottom,
+.arrow-left,
+.arrow-right {
+  display: block;
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  background-color: transparent;
+
+  text-align: center;
+  z-index: 10;
+}
+
+.arrow-top {
+  border-left-color:transparent !important;
+  border-right-color:transparent !important; 
+  border-top-color:transparent !important;
+}
+
+.arrow-bottom {
+  border-bottom-color:transparent !important;
+  border-left-color:transparent !important; 
+  border-right-color:transparent !important;
+}
+
+.arrow-left {
+  border-top-color:transparent !important;
+  border-bottom-color:transparent !important; 
+  border-left-color:transparent !important;
+}
+
+.arrow-right {
+  border-top-color:transparent !important;
+  border-bottom-color:transparent !important; 
+  border-right-color:transparent !important;
+}
+
+div.class-arrow {
+  border-color: rgba(0,0,0, .85);
+  border-width: .5rem;
+  margin-left: 6.6rem;
+  margin-top: -2rem;
+}
+
+  /**
+   * to-top
+   */
+div.control {
+  display: none;
+  position: fixed;
+  bottom: 10rem;
+  background: transparent;
+  border: none;
+  z-index: 105;
+}
+
+div.control {
+  right: 1rem;
+}
+
+.control > ul {
+  display: block;
+  list-style-type: none;
+}
+
+.control > ul > li {
+  display: inline-block;
+  position: relative;
+  float: left;
+  clear: both;
+  border: none;
+  background: transparent;
+}
+
+.control > ul > li:not(:last-child) > a {
+  border-bottom: none;
+}
+
+.control > ul > li > a {
+  position: relative;
+  display: block;
+  width: 50px;
+  height: 50px;
+  line-height: 2em;
+  text-align: center;
+  vertical-align: middle;
+  background-color: rgba(253,253,253, .8);
+  border: 1px solid rgba(155,155,155, .7);
+/*  -webkit-border-radius: 1px;
+     -moz-border-radius: 1px;
+          border-radius: 1px; */
+  cursor: pointer;
+
+  -webkit-transition: all .2s linear;
+     -moz-transition: all .2s linear;
+      -ms-transition: all .2s linear;
+       -o-transition: all .2s linear;
+          transition: all .2s linear;
+}
+
+.control > ul > li > a:hover {
+  background-color: rgba(55,55,55, .8);
+  color: #FFFFFF;
+}
+
+.control li.top > a {
+  font-size: 40px;
+  font-style: normal;
+  font-weight: lighter;
+  text-decoration: none;
+  content: "↑";
+  color: rgba(55,55,55, .7);
+}
+
+.control li.top > a:hover {
+  color: #FFFFFF;
+}
+
+.control li.hint > ul.circle {
+  display: block;
+  position: absolute;
+  height: 0;
+  width: 0;
+  top: 25px;
+  left: 25px;
+  overflow: hidden;
+  opacity: .9;
+  z-index: 110;
+
+  -webkit-transition: all .2s linear;
+     -moz-transition: all .2s linear;
+      -ms-transition: all .2s linear;
+       -o-transition: all .2s linear;
+          transition: all .2s linear;
+}
+
+.control li.hint:hover > ul.circle {
+  height: 100px;
+  width: 100px;
+  border-radius: 20px;
+  top: -25px;
+  left: -25px;
+}
+
+.control li.hint ul.circle > li {
+  display: block;
+  float: left;
+  height: 50px;
+  width: 50px;
+  line-height: 2x;
+  vertical-align: middle;
+  text-align: center;
+  cursor: pointer;
+}
+
+.control li.hint ul.circle > li:nth-child(1),
+.control li.hint ul.circle > li:nth-child(4) {
+  background-color: #EBEBEB;
+}
+
+.control li.hint ul.circle > li:nth-child(2),
+.control li.hint ul.circle > li:nth-child(3) {
+  background-color: #FFFFFF;
+}
+
+    /**
+     * footer part
+     */
+div.footer {
+  text-align: center;
+  padding-bottom: 4rem;
+  border-top: .1rem solid #C0C0C0;
+  padding-top: .5rem;
+}
+
+div.footer > p {
+  line-height: 2em;
+  vertical-align: middle;
+  text-align: center;
+  font-size: 1.4rem;
+  color: #666;
+}
+
+  /**
+   * 彩蛋
+   */
+.lbenzene {
+  color: #58E68E;
+}
+
+.Arcane {
+  background-color: rgb(88, 230, 142);
+}
